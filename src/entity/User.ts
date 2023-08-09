@@ -14,4 +14,7 @@ export class User {
 
     @Column()
     age: number
+
+    @Column("nvarchar", { length: 100, nullable: true })
+    address: string
 }

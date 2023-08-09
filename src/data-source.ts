@@ -1,6 +1,5 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { User } from "./entity/User"
 
 //MSSQL
 export const AppDataSource = new DataSource({
@@ -11,12 +10,10 @@ export const AppDataSource = new DataSource({
     database: "easypos",
     synchronize: true,
     logging: false,
-    entities: [User],
+    entities: ['src/entity/*.ts'],
     migrations: ['src/migration/*.ts'],
     subscribers: [],
-    extra: {
-        trustServerCertificate: true,
-      }
+    extra: { trustServerCertificate: true }
 })
 
 //MYSQL
